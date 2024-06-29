@@ -1,4 +1,3 @@
-// src/components/Button.tsx
 import React, { ReactNode } from 'react';
 
 interface ButtonProps {

@@ -1,20 +1,20 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useStore } from '../store';
 
 interface PrivateRouteProps {
-  component: React.ComponentType<any>;
-  path?: string;
+  component: React.ComponentType;
 }
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component, ...rest }) => {
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component }) => {
   const { user } = useStore();
+  const location = useLocation();
 
-  if (!user) {
-    return <Navigate to="/signin" />;
-  }
-
-  return <Component {...rest} />;
+  return user ? (
+    <Component />
+  ) : (
+    <Navigate to="/signin" state={{ from: location }} />
+  );
 };
 
 export default PrivateRoute;

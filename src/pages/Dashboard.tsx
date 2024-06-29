@@ -5,7 +5,6 @@ interface User {
   id: number;
   first_name: string;
   last_name: string;
-  // add other fields as needed
 }
 
 const Dashboard: React.FC = () => {
@@ -25,11 +24,11 @@ const Dashboard: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <ul>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-6 text-center text-blue-600">Dashboard</h1>
+      <ul className="bg-white shadow-md rounded-lg p-6">
         {users.map((user) => (
-          <li key={user.id}>
+          <li key={user.id} className="p-2 border-b border-gray-300">
             {user.first_name} {user.last_name}
           </li>
         ))}

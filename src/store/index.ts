@@ -1,8 +1,7 @@
-import { create } from 'zustand';
-
+import create from 'zustand';
 interface UserState {
-  user: any;
-  setUser: (user: any) => void;
+  user: { email: string } | null;
+  setUser: (user: { email: string }) => void;
 }
 
 export const useStore = create<UserState>((set) => ({
