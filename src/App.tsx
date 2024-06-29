@@ -1,21 +1,21 @@
-// src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import PrivateRoute from './components/PrivateRoute';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/signin" component={SignIn} />
-        <Route path="/signup" component={SignUp} />
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-      </Switch>
+      <Routes>
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/dashboard" element={<PrivateRoute component={Dashboard} />} />
+        <Route path="/" element={<SignIn />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;

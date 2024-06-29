@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { fetchUsers } from '../services/api';
 
-const Dashboard = () => {
-  const [users, setUsers] = useState([]);
+interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  // add other fields as needed
+}
+
+const Dashboard: React.FC = () => {
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const data = await fetchUsers();
-        setUsers(data.data);
+        const response = await fetchUsers();
+        setUsers(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -20,11 +27,13 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      {/* <ul>
+      <ul>
         {users.map((user) => (
-        //   <li key={user.id}>{user.first_name} {user.last_name}</li>
+          <li key={user.id}>
+            {user.first_name} {user.last_name}
+          </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   );
 };
