@@ -46,46 +46,46 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
-## Features
-# User Authentication:
+# Features
+## User Authentication:
 
     Sign In Page
     Sign Up Page
     Secure authentication using the ReqRes API
 
-# Protected Dashboard:
+## Protected Dashboard:
 
     Accessible only to authenticated users
     Displays a list of users fetched from the ReqRes API
 
-# State Management:
+## State Management:
 
     Managed using Zustand for efficient and scalable state handling
 
 
-# Styling:
+## Styling:
 
     Tailwind CSS integration for modern and responsive UI
 
 
-# Reusable Components:
+## Reusable Components:
 
     Common UI elements such as forms and modals
     Use of named slots to improve component reusability
 
 
-# Middleware Protection:
+## Middleware Protection:
 
     Route protection to ensure secure access to the dashboard
 
 
-# Testing:
+## Testing:
 
     Unit tests for critical parts of the application, such as authentication logic and HTTP service interactions
     TDD approach to maintain high code quality
 
 
-# Technologies Used
+## Technologies Used
 
     React (with TypeScript): A JavaScript library for building user interfaces
     Zustand: A state management solution
@@ -113,25 +113,36 @@ secure-user-management-dashboard/
 
 
 
-## How to Use
+# How to Use
 
 
-# Sign Up:
+## Sign Up:
     Navigate to the Sign-Up page to create a new account.
     Use a valid email and password to register.
+    There are only few valid Email i'd and password which will be use for the credentials due to API fetching Authentication.
+    Below email and password mention
+        Email: eve.holt@reqres.in
+        Password: cityslicka
+        
+        Email: george.bluth@reqres.in
+        Password: george
+        
+        Email: janet.weaver@reqres.in
+        Password: janet
 
 
-# Sign In:
+
+## Sign In:
     Navigate to the Sign-In page to log in with your credentials.
     After successful authentication, you will be redirected to the protected dashboard.
 
 
-# Dashboard:
+## Dashboard:
     The dashboard displays a list of users fetched from the ReqRes API.
     Accessible only to authenticated users.
 
 
-# Contributing
+## Contributing
     Contributions are welcome! Please follow these steps to contribute:
 
 
